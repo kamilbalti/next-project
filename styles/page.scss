@@ -123,6 +123,15 @@
     display: flex;
     flex-direction: column;
     // align-items: center;
+    .center{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .centerPic{
+      padding: 15px;
+    }
     .SecondCarousalDiv {
       display: flex;
       flex-direction: column;
@@ -133,8 +142,15 @@
       background-color: #f6f9fc;
       margin: 7vh !important;
       margin: auto;
-      .mainHeading {
-        font-size: 26px;
+      .headingDiv{
+        width: 100%;
+        .mainHeading {
+          font-size: 26px;
+        }
+        .mainHeading2 {
+          margin-left: 20px;
+          margin-bottom: 10px;
+        }
       }
       .mainIcon {
         margin-right: 5px;
@@ -157,7 +173,7 @@
         width: 92.4vw !important;
         margin-top: 20px;
         padding: 0 8px;
-        transition: translateX(20%) translateX(0);
+        // transition: translateX(20%) translateX(0);
         // box-sizing: border-box;
         .noBorder{
           outline: none;
@@ -190,7 +206,9 @@
           // align-items: center;
           // justify-content: center;
           margin: 10px;
-          border: 1px solid rgb(230, 230, 230);
+          box-shadow: 0px 1px 3px rgb(225, 225, 225);
+          border-radius: 12px;
+          // border: 1px solid rgb(230, 230, 230);
           position: relative;
           .off {
             position: absolute;
@@ -236,6 +254,9 @@
             margin: 7px;
             width: 120px !important;
             // height: 100px;
+          }
+          .imgSrc4{
+            width: 260px;
           }
           .bigImgSrc{
             margin: 7px;
@@ -296,7 +317,9 @@
             width: 27px !important;
           }
           .addNum {
-            margin: 0 10px;
+            width: 25px;
+            text-align: center;
+            // margin: 0 8px;
             color: rgb(70, 70, 70);
           }
           .cut {
@@ -315,10 +338,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: none;
+            box-shadow: none;
         }
         .imgDiv3{
-          border: none;
+          box-shadow: none;
+        }
+        .imgDiv4{
+          height: 380px;
         }
         .zero {
           transition: 3s ease;
@@ -356,6 +382,14 @@
         padding: 5px;
         margin-left: 20px;
       }
+      .allImgDiv5{
+        width: 100% !important;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        // border: 5px solid blue;
+        // height: 200px;
+      }
     }
     .row{
       width: 100%;
@@ -363,6 +397,14 @@
       flex-direction: row;
       align-items: center;
       box-sizing: border-box;
+    }
+    .carousalDiv{
+      // width: calc( 100% - 250px );
+      margin-top: 20px !important;
+      width: 93.5% !important;
+      margin: 0;
+      display: flex;
+      flex-direction: row !important;
     }
     .halfDiv{
       width: 47% !important;
@@ -373,6 +415,44 @@
     .halfDiv2{
       width: 43% !important;
       margin: 0 !important;
+    }
+    .miniBgWhite {
+      // margin: 7vh !important;
+      margin-left: 14px;
+      background-color: white !important;
+      padding: 10px !important;
+      min-width: 250px !important;
+      height: 460px !important;
+      margin-right: 20px;
+      box-shadow: 0px 1px 3px rgb(225, 225, 225);
+      border-radius: 15px;
+    }
+    .miniBgGray{
+      margin: 10px !important;
+      padding: 10px;
+      // padding-right: 100px !important;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      // margin-right: 20px;
+      background-color: #f6f9fc;
+      cursor: pointer;
+      .miniIcon{
+        width: 24px;
+        // height: 21px;
+      }
+      .miniName{
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 15px;
+      }
+      .miniName2{
+        margin-top: 20px;
+      }
+    }
+    .NoIcon{
+      margin-top: 60px !important;
+      padding-left: 25px;
     }
   }
   .price{
