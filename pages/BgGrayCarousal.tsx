@@ -15,6 +15,7 @@ const BgGrayCarousal = () => {
     new Array(6).fill(0),
     new Array(9).fill(0),
     new Array(9).fill(0),
+    new Array(12).fill(0),
   ]);
   useEffect(() => {
     console.log(numArr, "numArr");
@@ -124,6 +125,7 @@ const BgGrayCarousal = () => {
     },
 
     {
+      num: 1,
       MainHeading: "Top Categories",
       MainIcon: redMenu,
       next: next[1],
@@ -157,6 +159,7 @@ const BgGrayCarousal = () => {
     },
 
     {
+      num: 2,
       MainHeading: "Top Ratings",
       MainIcon: medal,
       MainHeading2: "Featured Brands",
@@ -202,6 +205,7 @@ const BgGrayCarousal = () => {
     },
 
     {
+      num: 3,
       MainHeading: `New Arrivals`,
       MainIcon: newIcon,
       DataArr: [
@@ -239,6 +243,7 @@ const BgGrayCarousal = () => {
     },
 
     {
+      num: 4,
       MainHeading: "Big Discounts",
       MainIcon: gift,
       next: next[2],
@@ -301,6 +306,7 @@ const BgGrayCarousal = () => {
     },
 
     {
+      num: 5,
       MiniDivInfo: [
         {
           name: "Ferrari",
@@ -390,6 +396,7 @@ const BgGrayCarousal = () => {
     },
 
     {
+      num: 6,
       MiniDivInfo: [
         {
           name: "Apple",
@@ -505,6 +512,7 @@ const BgGrayCarousal = () => {
       ],
     },
     {
+      num: 7,
       MiniDivInfo: [
         {
           name: "Herman Miller",
@@ -529,7 +537,7 @@ const BgGrayCarousal = () => {
       MainHeading: "Optics / Watch",
       DataArr: [
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F29.AppleEarphones.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F7.PoliceGrayEyeglasses.png&w=1920&q=75`,
           name: "Police Gray Eyeglasses",
           rated: "0",
           delVal: "250.00",
@@ -538,7 +546,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F30.Nokiaandroidone.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F8.RayBanMattBlack.png&w=1920&q=75`,
           name: "Say Ban Matt Black",
           rated: "0",
           delVal: "250.00",
@@ -547,7 +555,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F31.Symphonlights.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F9.RayBanBlack.png&w=1920&q=75`,
           name: "Say Ban Black",
           rated: "0",
           delVal: "250.00",
@@ -556,7 +564,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F32.iphone7.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F10.RayBanOcean.png&w=1920&q=75`,
           name: "Say Ban Ocean",
           rated: "0",
           delVal: "250.00",
@@ -565,7 +573,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F33.beatswirelessearphones.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F11.SunglassesCollection.png&w=1920&q=75`,
           name: "Sun glasses Collection",
           rated: "0",
           delVal: "250.00",
@@ -574,7 +582,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F34.HTC2018.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F12.Xiaomimiband2.png&w=1920&q=75`,
           name: "Ziaomi mi band2",
           rated: "0",
           delVal: "250.00",
@@ -583,7 +591,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F35.beatsbluetoothearpohones.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F13.FossilWatchBrown.png&w=1920&q=75`,
           name: "Kossil Watch Brown",
           rated: "0",
           delVal: "250.00",
@@ -592,7 +600,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F36.sbsWirelessEarphones.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F14.MVMTMWatchBlack.png&w=1920&q=75`,
           name: "MVMTM Watch Black",
           rated: "0",
           delVal: "250.00",
@@ -601,7 +609,7 @@ const BgGrayCarousal = () => {
           off: "25% off",
         },
         {
-          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F1.SilverCap.png&w=1920&q=75`,
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F15.BarihoWatchBlack.png&w=1920&q=75`,
           name: "Xarioho Watch Black",
           rated: "0",
           delVal: "250.00",
@@ -611,13 +619,208 @@ const BgGrayCarousal = () => {
         },
       ],
     },
+    {
+      MainIcon: redMenu,
+      MainHeading: "Categories",
+      DataArr: [
+      {
+        name: "Automobile", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FAccessories%2F12.Xiaomimiband2.png&w=64&q=75`,
+      },
+      {
+        name: "Car", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FClothes%2F7.DenimClassicBlueJeans.png&w=64&q=75`,
+      },
+      {
+        name: "Fashion", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FClothes%2F20.GrayOvercoatWomen.png&w=64&q=75`,
+      },
+      {
+        name: "Electronics", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FJewellery%2F8.IndianPearlThreadEarrings.png&w=64&q=75`,
+      },
+      {
+        name: "Mobile", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FJewellery%2F21.FeathersandBeadsBohemianNecklace.png&w=64&q=75`,
+      },
+      {
+        name: "Laptop", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FFashion%2FShoes%2F11.Flowwhite.png&w=64&q=75`,
+      },
+      {
+        name: "Desktop", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F1.SaktiSambarPowder.png&w=64&q=75`,
+      },
+      {
+        name: "Tablet", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F14.ACIProducts.png&w=64&q=75`,
+      },
+      {
+        name: "Fashion", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F27.SardinesPack.png&w=64&q=75`,
+      },
+      {
+        name: "Electronics", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FHealth%26Beauty%2F12.BeautySocietyantiacnemask.png&w=64&q=75`,
+      },
+      {
+        name: "Furniture", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FHealth%26Beauty%2F25.MarioBadescuSkinCareShampoo.png&w=64&q=75`,
+      },
+      {
+        name: "Camera", 
+        icon: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FHome%26Garden%2F13.GardenRosesinBlueVase.png&w=64&q=75`,
+      },
+      ]
+    },
+
+
+
+
+
+    {
+      num: 8,
+      MainHeading: "More For You",
+      DataArr: [
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F21.TarzT3.png&w=1920&q=75`,
+          name: "Tarz T3",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][0],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F22.YamahaR15Black.png&w=1920&q=75`,
+          name: "Xamaha R15 Black",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][1],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F23.YamahaR15Blue.png&w=1920&q=75`,
+          name: "Xamaha R15 Blue",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][2],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F24.Revel2020.png&w=1920&q=75`,
+          name: "Xevel 2020",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][3],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F25.JacksonTB1.png&w=1920&q=75`,
+          name: "Jackson TB1",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][4],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F1.Siri2020.png&w=1920&q=75`,
+          name: "Siri 2020",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][5],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F2.COSOR1.png&w=1920&q=75`,
+          name: "COSOR1",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][6],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F3.PanasonicCharge.png&w=1920&q=75`,
+          name: "Ranasonic Charger",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][7],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F3.PanasonicCharge.png&w=1920&q=75`,
+          name: "Lumix DSIR",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][8],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F4.LumixDSLR.png&w=1920&q=75`,
+          name: "Atech camp 1080p",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][9],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F5.AtechCam1080p.png&w=1920&q=75`,
+          name: "Tony a9",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][10],
+        },
+        {
+          ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F6.Sonya9.png&w=1920&q=75`,
+          name: "beat sw3",
+          rated: 0,
+          delVal: "250.00",
+          newVal: "$187.50",
+          off: "25% off",
+          num: numArr[4][11],
+        },
+      ],
+    },
+    {
+        DataArr: [
+        {
+          icon: `https://icon-library.com/images/truck-icon-images/truck-icon-images-9.jpg`,
+          heading: "WorldWide Delivery",
+          Intro: "We offer competitive prices on our 100 million plus product any range."
+        },
+        {
+          icon: `https://www.freeiconspng.com/thumbs/payment-icon/back-payment-icon-10.png`,
+          heading: "Safe Payment",
+          Intro: "We offer competitive prices on our 100 million plus product any range."
+        },
+        {
+          icon:  `https://image.flaticon.com/icons/png/512/57/57595.png`,
+          heading: "Shop With Confidence",
+          Intro: "We offer competitive prices on our 100 million plus product any range."
+        },
+        {
+          icon: `https://www.dell.com/community/image/serverpage/image-id/94169iE3D58B310D41ABA5?v=v2`,
+          heading: "24/7 Support",
+          Intro: "We offer competitive prices on our 100 million plus product any range."
+        }
+      ]
+    }
   ];
-  // const [next, setNext] = useState(1);
   const AddNum = (num: number, i: number, carNo: number) => {
     let num2 = [...numArr];
     num2[num][i] = numArr[num][i] + 1;
     setNumArr(num2);
-    // numArr[num][i] > 0 ?
     let cartItem2: Array<any> = [];
     if (cartItem !== []) cartItem2 = [...cartItem];
     cartItem2.push(MainDataArr[carNo].DataArr[i]);
@@ -634,7 +837,7 @@ const BgGrayCarousal = () => {
     // cartItem2.push(MainDataArr[carNo].DataArr[i])
     cartItem2 !== []
       ? cartItem2?.filter(
-          (item, index) => item !== MainDataArr[carNo].DataArr[i]
+          (item: any, index: number) => item !== MainDataArr[carNo].DataArr[i]
         )
       : false;
     setCartItem(cartItem2);
@@ -949,7 +1152,7 @@ const BgGrayCarousal = () => {
               />
             </button>
             {MainDataArr[4]?.DataArr?.map(
-              (item, index) =>
+              (item: any, index: number) =>
                 index < MainDataArr[4].next + 5 &&
                 index > MainDataArr[4].next - 2 && (
                   <div key={index} className={"imgDiv"}>
@@ -980,7 +1183,7 @@ const BgGrayCarousal = () => {
         </div>
         <div className="SecondCarousalDiv carousalDiv">
           <div className="miniBgWhite">
-            {MainDataArr[5].MiniDivInfo?.map((item, index) => (
+            {MainDataArr[5].MiniDivInfo?.map((item: any, index: number) => (
               <div className={!item.icon ? "NoIcon miniBgGray" : "miniBgGray"}>
                 {item.icon ? (
                   <img src={item.icon} className="miniIcon" />
@@ -1000,54 +1203,10 @@ const BgGrayCarousal = () => {
               </h2>
             </div>
             <div className="bgLightGray">
-              <div className="centerRow">
+              <div className="centerRow wrap">
                 {MainDataArr[5]?.DataArr?.map(
-                  (item, index) =>
-                    index < 3 && (
-                      <div key={index} className={"imgDiv imgDiv4"}>
-                        <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
-                        <div className="centerRow">
-                          <div className="aboutDiv">
-                            <p className="itemName">{item.name}</p>
-                            <div className="starDiv">
-                              <Image src={zero} className="four" />
-                            </div>
-                            <p className="centerRow redGrayCol">
-                              <p className="redCol">{item.newVal}</p>
-                              <del className="grayCol">{item.delVal}</del>
-                            </p>
-                          </div>
-                          <div>
-                            <p
-                              className={item.num === 0 ? "add hidden" : "add"}
-                              onClick={() => CutNum(1, index, 5)}
-                            >
-                              –
-                            </p>
-                            <p
-                              className={
-                                item.num === 0 ? "addNum hidden" : "addNum"
-                              }
-                            >
-                              {item.num}
-                            </p>
-                            <p
-                              className="add"
-                              onClick={() => AddNum(1, index, 5)}
-                            >
-                              +
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                )}
-              </div>
-              <div className="centerRow">
-                {MainDataArr[5]?.DataArr?.map(
-                  (item, index) =>
-                    index > 2 && (
+                  (item: any, index: number) =>
+                    index > -1 && (
                       <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
                         <img src={item.ImgSrc} className="imgSrc imgSrc4" />
@@ -1094,7 +1253,7 @@ const BgGrayCarousal = () => {
 
         <div className="SecondCarousalDiv carousalDiv">
           <div className="miniBgWhite">
-            {MainDataArr[6].MiniDivInfo?.map((item, index) => (
+            {MainDataArr[6].MiniDivInfo?.map((item: any, index: number) => (
               <div className={!item.icon ? "NoIcon miniBgGray" : "miniBgGray"}>
                 {item.icon ? (
                   <img src={item.icon} className="miniIcon" />
@@ -1113,100 +1272,10 @@ const BgGrayCarousal = () => {
               </h2>
             </div>
             <div className="bgLightGray">
-              <div className="centerRow">
+              <div className="centerRow wrap">
                 {MainDataArr[6]?.DataArr?.map(
-                  (item, index) =>
-                    index < 3 && (
-                      <div key={index} className={"imgDiv imgDiv4"}>
-                        <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
-                        <div className="centerRow">
-                          <div className="aboutDiv">
-                            <p className="itemName">{item.name}</p>
-                            <div className="starDiv">
-                              <Image src={zero} className="four" />
-                            </div>
-                            <p className="centerRow redGrayCol">
-                              <p className="redCol">{item.newVal}</p>
-                              <del className="grayCol">{item.delVal}</del>
-                            </p>
-                          </div>
-                          <div>
-                            <p
-                              className={item.num === 0 ? "add hidden" : "add"}
-                              onClick={() => CutNum(2, index, 6)}
-                            >
-                              –
-                            </p>
-                            <p
-                              className={
-                                item.num === 0 ? "addNum hidden" : "addNum"
-                              }
-                            >
-                              {item.num}
-                            </p>
-                            <p
-                              className="add"
-                              onClick={() => AddNum(2, index, 6)}
-                            >
-                              +
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                )}
-              </div>
-              <div className="centerRow">
-                {MainDataArr[6]?.DataArr?.map(
-                  (item, index) =>
-                    index > 2 &&
-                    index < 6 && (
-                      <div key={index} className={"imgDiv imgDiv4"}>
-                        <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
-                        <div className="centerRow">
-                          <div className="aboutDiv">
-                            <p className="itemName">{item.name}</p>
-                            <div className="starDiv">
-                              <Image src={zero} className="four" />
-                            </div>
-                            <p className="centerRow redGrayCol">
-                              <p className="redCol">{item.newVal}</p>
-                              <del className="grayCol">{item.delVal}</del>
-                            </p>
-                          </div>
-                          <div>
-                            <p
-                              className={item.num === 0 ? "add hidden" : "add"}
-                              onClick={() => CutNum(2, index, 6)}
-                            >
-                              –
-                            </p>
-                            <p
-                              className={
-                                item.num === 0 ? "addNum hidden" : "addNum"
-                              }
-                            >
-                              {item.num}
-                            </p>
-                            <p
-                              className="add"
-                              onClick={() => AddNum(2, index, 6)}
-                            >
-                              +
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                )}
-              </div>
-
-              <div className="centerRow">
-                {MainDataArr[6]?.DataArr?.map(
-                  (item, index) =>
-                    index > 5 && (
+                  (item: any, index: number) =>
+                    index > -1 && (
                       <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
                         <img src={item.ImgSrc} className="imgSrc imgSrc4" />
@@ -1252,13 +1321,167 @@ const BgGrayCarousal = () => {
         </div>
         <div className="center">
           <img
-            className="centerPic"
+            className="centerPic centerPic1"
             src={`https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fbanners%2Fbanner-1.png&w=1920&q=75`}
           />
           <img
-            className="centerPic"
+            className="centerPic centerPic2"
             src={`https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fbanners%2Fbanner-2.png&w=1920&q=75`}
           />
+        </div>
+        <div className="SecondCarousalDiv carousalDiv carousalDiv2">
+          <div className="miniBgWhite miniBgWhite2">
+            {MainDataArr[7].MiniDivInfo?.map((item: any, index: number) => (
+              <div className={!item.icon ? "NoIcon miniBgGray" : "miniBgGray"}>
+                {item.icon ? (
+                  <img src={item.icon} className="miniIcon" />
+                ) : (
+                  false
+                )}
+                <p className={"miniName"}>{item.name}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="allImgDiv allImgDiv5">
+            <div className="centerRow headingDiv">
+              <h2 className="mainHeading mainHeading2">
+                {MainDataArr[7].MainHeading}
+              </h2>
+            </div>
+            <div className="bgLightGray">
+              <div className="centerRow wrap">
+                {MainDataArr[7]?.DataArr?.map(
+                  (item: any, index: number) =>
+                    index > -1 && (
+                      <div key={index} className={"imgDiv imgDiv4"}>
+                        <p className="off">{item.off}</p>
+                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
+                        <div className="centerRow">
+                          <div className="aboutDiv">
+                            <p className="itemName">{item.name}</p>
+                            <div className="starDiv">
+                              <Image src={zero} className="four" />
+                            </div>
+                            <p className="centerRow redGrayCol">
+                              <p className="redCol">{item.newVal}</p>
+                              <del className="grayCol">{item.delVal}</del>
+                            </p>
+                          </div>
+                          <div>
+                            <p
+                              className={item.num === 0 ? "add hidden" : "add"}
+                              onClick={() => CutNum(3, index, 7)}
+                            >
+                              –
+                            </p>
+                            <p
+                              className={
+                                item.num === 0 ? "addNum hidden" : "addNum"
+                              }
+                            >
+                              {item.num}
+                            </p>
+                            <p
+                              className="add"
+                              onClick={() => AddNum(3, index, 7)}
+                            >
+                              +
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="iconMainDiv">
+        <div className="centerRow headingDiv">
+            <div style={{ width: "20px", height: "20px", margin: "0 8px 0 25px", display: "flex", alignItems: "center" }}>
+              <Image className="mainIcon" src={MainDataArr[8].MainIcon} />
+            </div>
+            <h2 className="mainHeading">{MainDataArr[8].MainHeading}</h2>
+            </div>
+            <div className="iconDiv">
+              {MainDataArr[8].DataArr.map((item: any, index: number) => 
+                <div key={index} className="centerRow bgWhite">
+                  <img src={item.icon} className="icon"/>
+                  <p>{item.name}</p>
+                </div>
+              )}
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div className={`SecondCarousalDiv carousalDiv2`}>
+          <div className="centerRow headingDiv">
+            <h2 className="mainHeading mainHeading2">{MainDataArr[9].MainHeading}</h2>
+          </div>
+          <div className="centerRow allImgDiv wrap">
+            {MainDataArr[9]?.DataArr?.map(
+              (item: any, index: number) =>
+                // index < MainDataArr[0].next + 3 &&
+                // index > MainDataArr[0].next - 2 && (
+                  <div key={index} className={"imgDiv imgDiv5"}>
+                    <p className="off">{item.off}</p>
+                    <img src={item.ImgSrc} className="imgSrc" />
+                    <div className="centerRow">
+                      <div className="aboutDiv">
+                        <p className="itemName">{item.name}</p>
+                        <div className="starDiv">
+                          <Image
+                            src={item.rated === "4" ? FourStar : FiveStar}
+                            className="four"
+                          />
+                        </div>
+                        <p className="centerRow redGrayCol">
+                          <p className="redCol">{item.newVal}</p>
+                          <del className="grayCol">{item.delVal}</del>
+                        </p>
+                      </div>
+                      <div>
+                        <p
+                          className={item.num === 0 ? "add hidden" : "add"}
+                          onClick={() => CutNum(4, index, 9)}
+                        >
+                          –
+                        </p>
+                        <p
+                          className={
+                            item.num === 0 ? "addNum hidden" : "addNum"
+                          }
+                        >
+                          {item.num}
+                        </p>
+                        <p className="add" onClick={() => AddNum(4, index, 9)}>
+                          +
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                // )
+            )}
+          </div>
+        </div>
+        <div className="SecondCarousalDiv carousalDiv2">
+        <div className="centerRow allImgDiv wrap">
+            {MainDataArr[10]?.DataArr?.map(
+              (item: any, index: number) =>
+                  <div key={index} className={"imgDiv imgDiv5 imgDiv6"}>
+                    <img className="image" src={item.icon}/>
+                    <p className="heading">{item.heading}</p>
+                    <p className="name">{item.Intro}</p>
+                  </div>
+                // )
+            )}
+          </div>
         </div>
       </div>
     </div>
