@@ -9,15 +9,23 @@ import search from "../public/search.png"
 import menu from "../public/menu.png"
 import account from "../public/account.png"
 import basket from "../public/basket.png"
+import blackArrow from "../public/blackArrow.png"
 // import cx from 'classnames'
 
 const Navbar = () => {
-    const [ checkScroll, setCheckScroll ] = useState(false)
-    const [ inputClick, setInputClick ] = useState(false)
-    typeof window !== 'undefined' ? window.onscroll = () => {
+    const [ checkScroll, setCheckScroll ] : any = useState(false)
+    const [ inputClick, setInputClick ] : any = useState(false)
+    const [ num, setNum ] : any = useState(0)
+    typeof window !== 'undefined' ? 
+    window.onscroll = () => {
         setCheckScroll(window.scrollY)
-        // console.log('window.innerHeight', window.scrollY)
-    } : false
+    }
+    : false
+    useEffect(() => {
+        typeof window !== 'undefined' ? 
+        setCheckScroll(window.scrollY) :
+        false
+    }, [])
     return (
         <div className={`NavbarMainDiv`}>
             <div className={`Navbar2`}>
@@ -38,6 +46,10 @@ const Navbar = () => {
             <div className={ checkScroll > 40 ? "fixed Navbar3" : `Navbar3`}>
             <div className={`bazarDiv`}>
                     <Image className={`bazar`} src={bazar} width="100px" height="45px"/>
+                    <div className="center">
+                        <Image src={menu} className={ checkScroll > 95 ? "" : "hidden" } width="30px" height="22px"/>
+                        <Image src={blackArrow} className={ checkScroll > 95 ? "" : "hidden" } width="12px" height="12px"/>
+                    </div>
                 </div>
                 <div className={!inputClick? `row2 inputDiv` : `row2 inputDiv redBorder`}>
                 <div className={`searchDiv`}>
