@@ -114,7 +114,7 @@
       justify-content: center;
       background-color: white;
       min-width: 40px;
-      height: 40px;
+      height: 41px;
       border-top-left-radius: 100px;
       border-bottom-left-radius: 100px;
 
@@ -130,6 +130,9 @@
       align-items: center;
       justify-content: space-between;
       height: 40px;
+      .space{
+        cursor: pointer;
+      }
     }
   }
   .fixed{

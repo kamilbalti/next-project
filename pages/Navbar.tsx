@@ -12,10 +12,10 @@ import basket from "../public/basket.png"
 import blackArrow from "../public/blackArrow.png"
 // import cx from 'classnames'
 
-const Navbar = () => {
+const Navbar = ({open, setOpen} : any) => {
     const [ checkScroll, setCheckScroll ] : any = useState(false)
     const [ inputClick, setInputClick ] : any = useState(false)
-    const [ num, setNum ] : any = useState(0)
+    // const [ num, setNum ] : any = useState(0)
     typeof window !== 'undefined' ? 
     window.onscroll = () => {
         setCheckScroll(window.scrollY)
@@ -65,7 +65,7 @@ const Navbar = () => {
                 </div>
                 <div className={`accountDiv`}>
                     <Image className={`space`} src={account} width="55px" height="50px"/>
-                    <Image className={`space`} src={basket} width="55px" height="50px"/>
+                    <Image className={`space`} onClick={() => setOpen(true)} src={basket} width="55px" height="50px"/>
                 </div>
             </div>
                 <div className={ checkScroll > 40 ? "Navbar4 row2 margin" : `row2 Navbar4`}>
