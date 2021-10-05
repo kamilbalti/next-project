@@ -1,3 +1,10 @@
+.centerRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // content: 'flickity';
+}
+
 .CartMainDiv{
   width: 27vw;
   height: 100vh;
@@ -227,101 +234,6 @@
         width: 0 !important;
         visibility: hidden;
         display: none;
-      }
-    }
-  }
-  .bgBlue{
-    padding: 0 5vw;
-
-    // margin: 0 auto !important;
-    background-color: rgb(12, 14, 48);
-    width: 100%;
-    height: 65vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-    .head{
-      margin: 10px 0;
-    }
-    .grayCol{
-      color: rgb(180, 180, 180);
-      font-size: 15px;
-      line-height: 25px;
-      padding: 3px 0;
-    }
-    .footerDiv{
-      height: 60%;
-      text-align: start;
-      // display: flex;
-      // flex-direction: column;
-      // justify-content: center;
-      width: 18%;
-      // padding: 0 30px;
-      margin: 0 28px;
-      .bold{
-        font-size: 28px;
-        font-weight: 500;
-        cursor: auto;
-      }
-      .bold:hover{
-        text-decoration: none !important;
-      }
-      .cursor{
-        cursor: pointer;
-        padding: 3px 0;
-      }
-      .cursor:hover{
-        color: white;
-      }
-    }
-    .footerDiv2{
-      width: 15%;  
-    }
-    .footerDiv3{
-      width: 18%;
-    }
-    .footerDiv4{
-      width: 22%;
-      .miniIconDiv{
-        margin-top: 10px;
-        .miniImage{
-          background-color: white;
-          clip-path: circle(38% at 50% 50%);
-          margin: 3px;
-          width: 30px;
-        }
-      }
-    }
-    .footerDiv1{
-      height: 60%;
-      // text-align: center;
-      width: 35%;
-      .bgLightBlue{
-        cursor: pointer;
-        background-color: rgb(12, 42, 77);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 10px;
-        padding: 8px 15px;
-        border-radius: 10px;
-        .bold{
-          font-weight: 500;
-        }
-        .bold:hover{
-          text-decoration: none !important;
-        }
-        .miniName{
-          font-size: 10px;
-          font-weight: 500;
-          padding-bottom: 0 !important;
-        }
-        .icon{
-          width: 25px;
-          margin-right: 10px;
-        }
       }
     }
   }
@@ -767,5 +679,100 @@
   }
   .noPad{
     padding: 3px !important;
+  }
+}
+.bgBlue{
+  padding: 0 5vw;
+
+  // margin: 0 auto !important;
+  background-color: rgb(12, 14, 48);
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  .head{
+    margin: 10px 0;
+  }
+  .grayCol{
+    color: rgb(180, 180, 180);
+    font-size: 15px;
+    line-height: 25px;
+    padding: 3px 0;
+  }
+  .footerDiv{
+    height: 60%;
+    text-align: start;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    width: 18%;
+    // padding: 0 30px;
+    margin: 0 28px;
+    .bold{
+      font-size: 28px;
+      font-weight: 500;
+      cursor: auto;
+    }
+    .bold:hover{
+      text-decoration: none !important;
+    }
+    .cursor{
+      cursor: pointer;
+      padding: 3px 0;
+    }
+    .cursor:hover{
+      color: white;
+    }
+  }
+  .footerDiv2{
+    width: 15%;  
+  }
+  .footerDiv3{
+    width: 18%;
+  }
+  .footerDiv4{
+    width: 22%;
+    .miniIconDiv{
+      margin-top: 10px;
+      .miniImage{
+        background-color: white;
+        clip-path: circle(38% at 50% 50%);
+        margin: 3px;
+        width: 30px;
+      }
+    }
+  }
+  .footerDiv1{
+    height: 60%;
+    // text-align: center;
+    width: 35%;
+    .bgLightBlue{
+      cursor: pointer;
+      background-color: rgb(12, 42, 77);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin: 10px;
+      padding: 8px 15px;
+      border-radius: 10px;
+      .bold{
+        font-weight: 500;
+      }
+      .bold:hover{
+        text-decoration: none !important;
+      }
+      .miniName{
+        font-size: 10px;
+        font-weight: 500;
+        padding-bottom: 0 !important;
+      }
+      .icon{
+        width: 25px;
+        margin-right: 10px;
+      }
+    }
   }
 }

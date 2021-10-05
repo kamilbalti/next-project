@@ -3,16 +3,22 @@ import Image from "next/image";
 import zero from "../public/0-5 rating star.png";
 import FourStar from "../public/4-5 rating star.png";
 import FiveStar from "../public/5-5 rating star.png";
-import redMenu from "../public/redMenu.png";
-import medal from "../public/medal.png";
-import brandStar from "../public/brandStar.png";
-import newIcon from "../public/new.png";
-import gift from "../public/gift.png";
-import bazar from "../public/logo.svg"
+import Footer from "./footer";
+import AboutPage from "./AboutPage";
+// import redMenu from "../public/redMenu.png";
+// import medal from "../public/medal.png";
+// import brandStar from "../public/brandStar.png";
+// import newIcon from "../public/new.png";
+// import gift from "../public/gift.png";
+// import bazar from "../public/logo.svg"
 
 
 const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem, next, setNext } : any) => {
-
+  const [ select, setSelect ] : any = useState(false)
+  const productSelect = (mainIndex: any, childIndex: any) => {
+    setSelect({mainIndex: mainIndex, childIndex: childIndex})
+    // MainDataArr[mainIndex].DataArr[childIndex]
+  }
   const AddNum = (num: number, i: number, carNo: number) => {
     // console.log(MainDataArr[carNo].DataArr[i].cartItemIndex, "ci")
     let num2 = [...numArr];
@@ -101,6 +107,10 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
 
   return (
     <div className={``}>
+      {
+        // select?
+        // <AboutPage mainInd={select?.mainIndex} childInd={select?.childIndex} MainDataArr={MainDataArr}/>
+        // :
       <div className={`bgLightGray`}>
         <div className={`SecondCarousalDiv `}>
           <div className="centerRow headingDiv">
@@ -139,7 +149,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
               (item: any, index: number) =>
                 index < MainDataArr[0].next + 3 &&
                 index > MainDataArr[0].next - 2 && (
-                  <div key={index} className={"imgDiv"}>
+                  <div key={index} className={"imgDiv"} onClick={() => productSelect(0, index)}>
                     <p className="off">{item.off}</p>
                     <img src={item.ImgSrc} className="imgSrc" />
                     <div className="centerRow">
@@ -442,7 +452,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 {MainDataArr[5]?.DataArr?.map(
                   (item: any, index: number) =>
                     index > -1 && (
-                      <div key={index} className={"imgDiv imgDiv4"}>
+                      <div key={index} className={"imgDiv imgDiv4"} onClick={() => productSelect(5, index)}>
                         <p className="off">{item.off}</p>
                         <img src={item.ImgSrc} className="imgSrc imgSrc4" />
                         <div className="centerRow">
@@ -511,7 +521,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 {MainDataArr[6]?.DataArr?.map(
                   (item: any, index: number) =>
                     index > -1 && (
-                      <div key={index} className={"imgDiv imgDiv4"}>
+                      <div key={index} className={"imgDiv imgDiv4"} onClick={() => productSelect(6, index)}>
                         <p className="off">{item.off}</p>
                         <img src={item.ImgSrc} className="imgSrc imgSrc4" />
                         <div className="centerRow">
@@ -589,7 +599,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 {MainDataArr[7]?.DataArr?.map(
                   (item: any, index: number) =>
                     index > -1 && (
-                      <div key={index} className={"imgDiv imgDiv4"}>
+                      <div key={index} className={"imgDiv imgDiv4"} onClick={() => productSelect(7, index)}>
                         <p className="off">{item.off}</p>
                         <img src={item.ImgSrc} className="imgSrc imgSrc4" />
                         <div className="centerRow">
@@ -662,7 +672,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
           <div className="centerRow allImgDiv wrap">
             {MainDataArr[9]?.DataArr?.map(
               (item: any, index: number) =>
-                  <div key={index} className={"imgDiv imgDiv5"}>
+                  <div key={index} className={"imgDiv imgDiv5"} onClick={() => productSelect(9, index)}>
                     <p className="off">{item.off}</p>
                     <img src={item.ImgSrc} className="imgSrc" />
                     <div className="centerRow">
@@ -699,7 +709,6 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                       </div>
                     </div>
                   </div>
-                // )
             )}
           </div>
         </div>
@@ -715,58 +724,9 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
             )}
           </div>
         </div>
+        <Footer />
       </div>
-      <div className="bgBlue">
-        <div className="footerDiv1">
-          <Image className="head" src={bazar} width="120px" height="50px"/>
-          <p className="grayCol">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
-          <div className="centerRow head">
-            <div className="bgLightBlue">
-              <img className="icon" src={`https://cdn.pixabay.com/photo/2016/08/31/00/49/google-1632434_1280.png`}/>
-              <div>
-                <p className="miniName">Get it on</p>
-                <p className="bold">Google Play</p>
-              </div>
-            </div>
-            <div className="bgLightBlue">
-              <img className="icon" src={`https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/App_Store_%28iOS%29.svg/2048px-App_Store_%28iOS%29.svg.png`}/>
-              <div>
-                <p className="miniName">Download on the</p>
-                <p className="bold">App Store</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footerDiv footerDiv2">
-          <p className="bold head">About us</p>
-          <p className="grayCol cursor">Careers</p>
-          <p className="grayCol cursor">Our Stores</p>
-          <p className="grayCol cursor">Our Cares</p>
-          <p className="grayCol cursor">{"Terms & Conditions"}</p>
-          <p className="grayCol cursor">Privacy Policy</p>
-        </div>
-        <div className="footerDiv footerDiv3">
-          <p className="bold head">Customer Care</p>
-          <p className="grayCol cursor">Help Center</p>
-          <p className="grayCol cursor">How to Buy</p>
-          <p className="grayCol cursor">Track your Order</p>
-          <p className="grayCol cursor">{"Corporate & Bulk Purchasing"}</p>
-          <p className="grayCol cursor">{"Returns & Refunds"}</p>
-        </div>
-        <div className="footerDiv footerDiv4">
-          <p className="bold head">Contact Us</p>
-          <p className="grayCol">70 Washington Square South, New York, NY 10012, United States</p>
-          <p className="grayCol">Email: uilib.help@gmail.com</p>
-          <p className="grayCol">Phone: +1 1123 456 780</p>
-          <p className="miniIconDiv">
-            <img className="miniImage" src={`https://cdn.iconscout.com/icon/free/png-256/facebook-259-675868.png`}/>
-            <img className="miniImage" src={`https://cdn.iconscout.com/icon/free/png-256/twitter-3318135-2795916.png`}/>
-            <img className="miniImage" src={`https://cdn.iconscout.com/icon/free/png-256/youtube-4054104-3353179.png`}/>
-            <img className="miniImage" src={`https://cdn.iconscout.com/icon/free/png-64/google-396-438233.png`}/>
-            <img className="miniImage" src={`https://cdn.iconscout.com/icon/free/png-64/instagram-85-433319.png`}/>
-          </p>
-        </div>
-      </div>
+      }
     </div>
   );
 };
