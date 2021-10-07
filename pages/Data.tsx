@@ -5,6 +5,7 @@ import medal from "../public/medal.png";
 import brandStar from "../public/brandStar.png";
 import newIcon from "../public/new.png";
 import gift from "../public/gift.png";
+import BigCarousal from "./BigCarousal";
 
 const Data = ({cartItem, setCartItem} : any ) => {
     const [numArr, setNumArr] : Array<any> = useState([

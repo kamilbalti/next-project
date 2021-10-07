@@ -11,7 +11,7 @@ function Page({open, setOpen}: any) {
       <div className={`PageMainDiv`}>
         { open ? <div className="blur" onClick={() => setOpen(false)}>
         </div> : false }
-        <BigCarousal />
+        {/* <BigCarousal /> */}
         <Data cartItem={cartItem} setCartItem={setCartItem}/>
         { open ? <Cart cartItem={cartItem}/> : false}
       </div>

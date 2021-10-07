@@ -5,6 +5,7 @@ import FourStar from "../public/4-5 rating star.png";
 import FiveStar from "../public/5-5 rating star.png";
 import Footer from "./footer";
 import AboutPage from "./AboutPage";
+import BigCarousal from "./BigCarousal";
 // import redMenu from "../public/redMenu.png";
 // import medal from "../public/medal.png";
 // import brandStar from "../public/brandStar.png";
@@ -14,12 +15,14 @@ import AboutPage from "./AboutPage";
 
 
 const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem, next, setNext } : any) => {
+  const [ open, setOpen ] = useState(false)
   const [ select, setSelect ] : any = useState(false)
   const productSelect = (mainIndex: any, childIndex: any) => {
     setSelect({mainIndex: mainIndex, childIndex: childIndex})
     // MainDataArr[mainIndex].DataArr[childIndex]
   }
   const AddNum = (num: number, i: number, carNo: number) => {
+    setOpen(true)
     // console.log(MainDataArr[carNo].DataArr[i].cartItemIndex, "ci")
     let num2 = [...numArr];
     num2[num][i] = num2[num][i] + 1;
@@ -63,6 +66,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
 
 
   const CutNum = (num: number, i: number, carNo: number) => {
+    setOpen(true)
     let cartItem2: any;
     let num2 = [...numArr];
     num2[num][i] = numArr[num][i] - 1;
@@ -106,12 +110,12 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
   };
 
   return (
-    <div className={``}>
-      {
-        // select?
-        // <AboutPage mainInd={select?.mainIndex} childInd={select?.childIndex} MainDataArr={MainDataArr}/>
-        // :
-      <div className={`bgLightGray`}>
+    <div>
+      { !open && select?
+        <AboutPage mainInd={select?.mainIndex} childInd={select?.childIndex} MainDataArr={MainDataArr}/>
+        :
+        <div className={`bgLightGray`}>
+        <BigCarousal />
         <div className={`SecondCarousalDiv `}>
           <div className="centerRow headingDiv">
             <div
@@ -149,9 +153,9 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
               (item: any, index: number) =>
                 index < MainDataArr[0].next + 3 &&
                 index > MainDataArr[0].next - 2 && (
-                  <div key={index} className={"imgDiv"} onClick={() => productSelect(0, index)}>
+                  <div key={index} className={"imgDiv"}>
                     <p className="off">{item.off}</p>
-                    <img src={item.ImgSrc} className="imgSrc" />
+                    <img src={item.ImgSrc} className="imgSrc" onClick={() => productSelect(0, index)}/>
                     <div className="centerRow">
                       <div className="aboutDiv">
                         <p className="itemName">{item.name}</p>
@@ -452,9 +456,9 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 {MainDataArr[5]?.DataArr?.map(
                   (item: any, index: number) =>
                     index > -1 && (
-                      <div key={index} className={"imgDiv imgDiv4"} onClick={() => productSelect(5, index)}>
+                      <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
+                        <img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(5, index)}/>
                         <div className="centerRow">
                           <div className="aboutDiv">
                             <p className="itemName">{item.name}</p>
@@ -521,9 +525,9 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 {MainDataArr[6]?.DataArr?.map(
                   (item: any, index: number) =>
                     index > -1 && (
-                      <div key={index} className={"imgDiv imgDiv4"} onClick={() => productSelect(6, index)}>
+                      <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
+                        <img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(6, index)}/>
                         <div className="centerRow">
                           <div className="aboutDiv">
                             <p className="itemName">{item.name}</p>
@@ -599,9 +603,9 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 {MainDataArr[7]?.DataArr?.map(
                   (item: any, index: number) =>
                     index > -1 && (
-                      <div key={index} className={"imgDiv imgDiv4"} onClick={() => productSelect(7, index)}>
+                      <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" />
+                        <img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(7, index)}/>
                         <div className="centerRow">
                           <div className="aboutDiv">
                             <p className="itemName">{item.name}</p>
@@ -672,9 +676,9 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
           <div className="centerRow allImgDiv wrap">
             {MainDataArr[9]?.DataArr?.map(
               (item: any, index: number) =>
-                  <div key={index} className={"imgDiv imgDiv5"} onClick={() => productSelect(9, index)}>
+                  <div key={index} className={"imgDiv imgDiv5"}>
                     <p className="off">{item.off}</p>
-                    <img src={item.ImgSrc} className="imgSrc" />
+                    <img src={item.ImgSrc} className="imgSrc" onClick={() => productSelect(9, index)}/>
                     <div className="centerRow">
                       <div className="aboutDiv">
                         <p className="itemName">{item.name}</p>
