@@ -137,17 +137,10 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
             <h2 className="mainHeading">{MainDataArr[0].MainHeading}</h2>
           </div>
           <div className="centerRow allImgDiv">
-            <button
-              className="noBorder"
-              disabled={MainDataArr[0].next === 1}
-              onClick={() => ChangeNextNum(0, "sub", 0)}
-            >
-              <img
-                className={
-                  MainDataArr[0].next === 1 ? `arrow disable` : `arrow`
-                }
-                src={MainDataArr[0].leftArrow}
-              />
+            <button className="noBorder" disabled={MainDataArr[0].next === 1}
+              onClick={() => ChangeNextNum(0, "sub", 0)} >
+              <img className={ MainDataArr[0].next === 1 ? `arrow disable` : `arrow` }
+                src={MainDataArr[0].leftArrow}/>
             </button>
             {MainDataArr[0]?.DataArr?.map(
               (item: any, index: number) =>

@@ -6,17 +6,26 @@
 }
 
 .IntroMainPage{
+  background-color: #F6F9FC;
   .IntroRow{
     display: flex;
+    background-color: white;
+    width: 100%;
     flex-direction: row;
     align-items: center;
-    margin: 0 10vw;
-    // justify-content: center;
-    .IntroMainImg{
+    padding: 0 10vw;
+    .MainIntroPara{
+      margin: 0 10vw;
+    }
+    .IntroStar{
       padding-left: 10px !important;
     }
+    .IntroMainImg{
+      width: 400px;
+    }
     .IntroHead{
-      font-size: 30px;
+      color: rgb(70, 70, 70);
+      font-size: 34px;
       font-weight: bold;
     }
     .litBold{
@@ -26,34 +35,136 @@
       font-size: 15px;
     }
     .IntroPrice{
+      font-size: 30px;
+      color: rgb(210, 63, 87);
+      margin: 10px 0 0;
+    }
+    .IntroPrice2{
+      letter-spacing: -1px;
+      font-size: 21px;
       color: rgb(210, 63, 87);
       margin: 10px 0 0;
     }
     .IntroButton{
       background-color: rgb(210, 63, 87);
       color: white;
-      padding: 10px 24px;
+      padding: 13px 25px;
       border: none;
-      border-radius: 3px;
-      font-weight: 600;
-      font-size: 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 0.5px;
       margin: 25px 0;
+      margin-bottom: 40px;
+    }
+    .AddToCartButton{
+      font-size: 14px;
+      font-weight: bold;
+      padding: 9px 15px;
+      margin-right: 18px;
+      // margin: 0 10px;
+    }
+    .AddToListButton{
+      font-size: 14px;
+      background-color: white;
+      color: rgb(210, 63, 87);
+      border: 1px solid rgb(210, 63, 87, 0.5);
+      padding: 9px 15px;
+      // margin: 15px 10px;
     }
     .pad{
       margin: 15px 0;
     }
   }
   .IntroRow2{
-    margin: 0 8vw;
-    .head2{
-      font-size: 20px;
-      font-weight: 600;
-      margin: 15px 0;
+    margin: 0 7vw;
+    .grayCol{
+      font-size: 28px;
+      font-weight: bold;
+      color: rgb(150, 150, 150);
+      padding: 5px;
     }
+    .imgDiv {
+      z-index: 9;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      margin: 8px;
+      box-shadow: 0px 1px 3px rgb(225, 225, 225);
+      border-radius: 12px;
+      position: relative;
+      padding: 15px;
+      height: 205px;
+      .name{
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .grayCol2 {
+        // margin: 0 !important;
+        // padding: 0 !important;
+        color: gray;
+        font-size: 14px;
+        // font-weight: 500;
+        text-decoration: line-through;
+      }
+      .redCol {
+        font-size: 14px;
+        color: rgb(200, 0, 0);
+        font-weight: 500;
+        margin-right: 10px;
+      }
+    }
+    .smallBox{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 130px;
+      margin-right: 25px;
+      // margin: 0 15px;
+      .smallBoxBold{
+        padding-top: 12px;
+        color: rgb(50, 50, 50);
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+    .total{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: #F6F9FC;
+      box-shadow: none;
+      border: 1px solid rgb(220, 220, 220);
+    }
+    .equalSign{
+      margin: 15px;
+    }
+    .head2{
+      color: rgb(50, 50, 50);
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .margTop{
+      margin-left: 8px;
+      margin-top: 8vh;
+    }
+    
     .borderBot{
+      margin: 50px 0;
+      margin-bottom: 30px;
+      padding: 10px 20px;
       font-weight: bold;
       color: rgb(100, 100, 100);
       border-bottom: rgb(215, 215, 215) 1px solid;
+    }
+    .smallFont{
+      color: rgb(100, 100, 100);
+      // font-size: 15px;
+      letter-spacing: 0.5px;
     }
   }
 }
@@ -498,7 +609,6 @@
             .redGrayCol {
               margin-block-start: 0 !important;
               margin-block-end: 0 !important;
-
               .grayCol {
                 margin: 0 !important;
                 padding: 0 !important;

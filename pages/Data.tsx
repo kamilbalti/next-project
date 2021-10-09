@@ -812,6 +812,42 @@ const Data = ({cartItem, setCartItem} : any ) => {
               Intro: "We offer competitive prices on our 100 million plus product any range."
             }
           ]
+        },
+        {
+          DataArr: [
+            {
+              off: "20% off",
+              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F8.ColgateAdvanceProtectionToothpaste.png&w=1920&q=75",
+              name: "Colgate Advance Protec...",
+              delVal: "250$",
+              newVal: "200$",
+              rated: 0,
+            },
+            {
+              off: "20% off",
+              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F9.CatchSprinklersChatMasala.png&w=1920&q=75",
+              name: "Catch Sprinklers Chat M...",
+              delVal: "250$",
+              newVal: "200$",
+              rated: 0,
+            },
+            {
+              off: "20% off",
+              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F10.CatchItalianSeasoningGrinder.png&w=1920&q=75",
+              name: "Catch Italian Seasoning ...",
+              delVal: "250$",
+              newVal: "200$",
+              rated: 0,
+            },
+            {
+              off: "20% off",
+              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F11.TadkaGaramMasala.png&w=1920&q=75",
+              name: "Tadka Garam Masala",
+              delVal: "250$",
+              newVal: "200$",
+              rated: 0,
+            },
+          ]
         }
       ];
       
