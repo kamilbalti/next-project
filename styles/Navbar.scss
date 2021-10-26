@@ -1,5 +1,5 @@
 .NavbarMainDiv {
-  box-shadow: 1px 1px 10px 1px rgb(200, 200, 200);
+   box-shadow: 1px 1px 10px 1px rgb(200, 200, 200) !important;
   p {
     margin: 0;
   }
@@ -15,21 +15,28 @@
     flex-direction: row;
     align-items: center;
     font-size: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
   }
   .Navbar2 {
-    color: white;
+    color: rgb(230, 230, 230);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    // box-sizing: border-box;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(15, 52, 96);
     width: 100%;
     height: 40px;
-    font-size: 12px;
-
+    .Navbar2MainDiv{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 40px;
+        max-width: 1350px;
+        font-size: 12px;
+    }
     .NavbarDiv {
       display: flex;
       flex-direction: row;
@@ -39,6 +46,123 @@
         width: 18px;
         margin: 10px;
       }
+    }
+  }
+  // .fullWidth{
+  //   width: 100%;
+  //   // box-shadow: 0 4px 2px -2px rgb(200, 200, 200) !important;
+  //   box-shadow: 1px 1px 10px 1px rgb(200, 200, 200) !important;
+  //   // display: flex !important;
+  //   // flex-direction: row !important;
+  //   // border: 3px solid black;
+  //   // align-items: center;
+  //   // justify-content: center;
+  // }
+  .NavbarChildMainDiv{
+    // display: flex;
+    // flex-direction: column;
+    margin: auto;
+    // align-items: center;
+    width: 100%;
+    max-width: 1350px;
+    .fullWidth{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      .Navbar3 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1350px;
+        width: 100%;
+        padding: 20px 60px;
+    
+        .bazarDiv {
+          width: 170px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .inputDiv {
+          border: 1px solid rgb(190, 190, 190);
+          border-radius: 100px;
+          width: 58%;
+          // min-width: 60%;
+          // padding-left: 10px;
+          height: 45px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+    
+          .Noborder {
+            width: 77%;
+            height: 41px;
+            border: none;
+            outline: none;
+            padding-left: 2px;
+            font-size: 17px;
+            color: rgb(100, 100, 100);
+            font-family: Arial, Helvetica, sans-serif;
+          }
+        }
+        .inputDiv:hover {
+          border: 1px solid black;
+          border-left: 0.1px solid black;
+        }
+    
+        .searchDiv {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          background-color: white;
+          min-width: 40px;
+          height: 41px;
+          border-top-left-radius: 100px;
+          border-bottom-left-radius: 100px;
+    
+          .search {
+            padding-left: 30px;
+          }
+        }
+    
+        .accountDiv {
+          width: 130px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          height: 40px;
+          .space{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .fixed {
+      // transition: 3s linear;
+      position: fixed !important;
+      top: 0;
+      right: 0;
+      // width: 100vw !important;
+      // margin-top: 0;
+      background-color: white;
+      // background-color: red;
+      // width: 100%;
+      z-index: 15;
+      box-shadow: 1px 1px 10px 1px rgb(200, 200, 200);
+      // border-bottom: 1px solid rgb(220, 220, 220);
+    }
+    .noWidth { 
+      // transition: none;
+      // transform: translateY(-1000px);
+      background-color: blue;
+      // background-color: blue !important;
     }
   }
   .center{
@@ -59,90 +183,7 @@
     margin: 0 80px;
   }
 
-  .Navbar3 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    // height: 60px;
-    padding: 20px 60px;
-    // margin: 10px 60px;
 
-    .bazarDiv {
-      width: 170px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      .bazar {
-      }
-    }
-    .inputDiv {
-      border: 1px solid rgb(190, 190, 190);
-      border-radius: 100px;
-      width: 58%;
-      // min-width: 60%;
-      // padding-left: 10px;
-      height: 45px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-
-      .Noborder {
-        width: 77%;
-        height: 41px;
-        border: none;
-        outline: none;
-        padding-left: 2px;
-        font-size: 17px;
-        color: rgb(100, 100, 100);
-        font-family: Arial, Helvetica, sans-serif;
-      }
-    }
-    .inputDiv:hover {
-      border: 1px solid black;
-      border-left: 0.1px solid black;
-    }
-
-    .searchDiv {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      background-color: white;
-      min-width: 40px;
-      height: 41px;
-      border-top-left-radius: 100px;
-      border-bottom-left-radius: 100px;
-
-      .search {
-        padding-left: 30px;
-      }
-    }
-
-    .accountDiv {
-      width: 130px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      height: 40px;
-      .space{
-        cursor: pointer;
-      }
-    }
-  }
-  .fixed{
-    position: fixed !important;
-    top: 0;
-    // margin-top: 0;
-    background-color: white;
-    width: 100%;
-    z-index: 15;
-    box-shadow: 1px 1px 10px 1px rgb(200, 200, 200);
-    border-bottom: 1px solid rgb(220, 220, 220);
-  }
   .Navbar4 {
     margin-bottom: 8px;
 
