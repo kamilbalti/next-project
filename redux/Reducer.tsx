@@ -1,32 +1,23 @@
-import BgGrayCarousal from "./BgGrayCarousal";
-import React, { useState, useEffect } from "react";
 import redMenu from "../public/redMenu.png";
 import medal from "../public/medal.png";
 import brandStar from "../public/brandStar.png";
 import newIcon from "../public/new.png";
 import gift from "../public/gift.png";
-import BigCarousal from "./BigCarousal";
+// import bazar from "../public/logo.svg"
+import { SET_CARTITEM, SET_CHECK, SET_MAINDATAARR, SET_OPEN } from "../redux/ActionType";
 
-const Data = ({cartItem, setCartItem} : any ) => {
-    const [numArr, setNumArr] : Array<any> = useState([
-        new Array(10).fill(0),
-        new Array(6).fill(0),
-        new Array(9).fill(0),
-        new Array(9).fill(0),
-        new Array(12).fill(0),
-      ])
-      useEffect(() => {
-        console.log(numArr, "numArr");
-      }, [numArr]);
-      const [next, setNext]: Array<any> = useState([1, 1, 1]);
-      let MainDataArr: any = [
+export const initialState : any = {
+    open: false,
+    cartItem: [],
+    MainDataArr: [
         {
+          check: false,
           num: 0,
           MainHeading: "Flash Deals",
           MainIcon: "https://cdn-icons-png.flaticon.com/128/252/252590.png",
           leftArrow: "https://cdn-icons-png.flaticon.com/128/2089/2089642.png",
           rightArrow: "https://cdn-icons-png.flaticon.com/128/2089/2089675.png",
-          next: next[0],
+          next: 1,
           DataArr: [
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-1.png&w=3840&q=75`,
@@ -35,52 +26,15 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[0][0],
+              num: 0,
             },
-            {
-              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-2.png&w=3840&q=75`,
+            {ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-2.png&w=3840&q=75`,
               name: "Smart watch black",
               rated: "4",
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[0][1],
-            },
-            {
-              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-3.png&w=3840&q=75`,
-              name: "Smart watch black",
-              rated: "4",
-              delVal: "250.00",
-              newVal: "$187.50",
-              off: "25% off",
-              num: numArr[0][2],
-            },
-            {
-              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-4.png&w=3840&q=75`,
-              name: "Smart watch black",
-              rated: "4",
-              delVal: "250.00",
-              newVal: "$187.50",
-              off: "25% off",
-              num: numArr[0][3],
-            },
-            {
-              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-1.png&w=3840&q=75`,
-              name: "Smart watch black",
-              rated: "4",
-              delVal: "250.00",
-              newVal: "$187.50",
-              off: "25% off",
-              num: numArr[0][4],
-            },
-            {
-              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-2.png&w=3840&q=75`,
-              name: "Smart watch black",
-              rated: "4",
-              delVal: "250.00",
-              newVal: "$187.50",
-              off: "25% off",
-              num: numArr[0][5],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-3.png&w=3840&q=75`,
@@ -89,7 +43,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[0][6],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-4.png&w=3840&q=75`,
@@ -98,7 +52,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[0][7],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-1.png&w=3840&q=75`,
@@ -107,7 +61,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[0][8],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-2.png&w=3840&q=75`,
@@ -116,7 +70,43 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[0][9],
+              num: 0,
+            },
+            {
+              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-3.png&w=3840&q=75`,
+              name: "Smart watch black",
+              rated: "4",
+              delVal: "250.00",
+              newVal: "$187.50",
+              off: "25% off",
+              num: 0,
+            },
+            {
+              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-4.png&w=3840&q=75`,
+              name: "Smart watch black",
+              rated: "4",
+              delVal: "250.00",
+              newVal: "$187.50",
+              off: "25% off",
+              num: 0,
+            },
+            {
+              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-1.png&w=3840&q=75`,
+              name: "Smart watch black",
+              rated: "4",
+              delVal: "250.00",
+              newVal: "$187.50",
+              off: "25% off",
+              num: 0,
+            },
+            {
+              ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2Fflash-2.png&w=3840&q=75`,
+              name: "Smart watch black",
+              rated: "4",
+              delVal: "250.00",
+              newVal: "$187.50",
+              off: "25% off",
+              num: 0,
             },
           ],
         },
@@ -125,7 +115,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
           num: 1,
           MainHeading: "Top Categories",
           MainIcon: redMenu,
-          next: next[1],
+          next: 1,
           DataArr: [
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fbanners%2Fcategory-1.png&w=3840&q=75`,
@@ -243,7 +233,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
           num: 4,
           MainHeading: "Big Discounts",
           MainIcon: gift,
-          next: next[2],
+          next: 1,
           DataArr: [
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F7.beatsw3.png&w=2048&q=75`,
@@ -341,7 +331,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$200.00",
-              num: numArr[1][0],
+              num: 0,
               off: "20% off",
             },
             {
@@ -350,7 +340,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$200.00",
-              num: numArr[1][1],
+              num: 0,
               off: "20% off",
             },
             {
@@ -359,7 +349,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$200.00",
-              num: numArr[1][2],
+              num: 0,
               off: "20% off",
             },
             {
@@ -368,7 +358,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$200.00",
-              num: numArr[1][3],
+              num: 0,
               off: "20% off",
             },
             {
@@ -377,7 +367,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$200.00",
-              num: numArr[1][4],
+              num: 0,
               off: "20% off",
             },
             {
@@ -386,7 +376,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$200.00",
-              num: numArr[1][5],
+              num: 0,
               off: "20% off",
             },
           ],
@@ -431,7 +421,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][0],
+              num: 0,
               off: "25% off",
             },
             {
@@ -440,7 +430,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][1],
+              num: 0,
               off: "25% off",
             },
             {
@@ -449,7 +439,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][2],
+              num: 0,
               off: "25% off",
             },
             {
@@ -458,7 +448,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][3],
+              num: 0,
               off: "25% off",
             },
             {
@@ -467,7 +457,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][4],
+              num: 0,
               off: "25% off",
             },
             {
@@ -476,7 +466,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][5],
+              num: 0,
               off: "25% off",
             },
             {
@@ -485,7 +475,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][6],
+              num: 0,
               off: "25% off",
             },
             {
@@ -494,7 +484,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][7],
+              num: 0,
               off: "25% off",
             },
             {
@@ -503,7 +493,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[2][8],
+              num: 0,
               off: "25% off",
             },
           ],
@@ -539,7 +529,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][0],
+              num: 0,
               off: "25% off",
             },
             {
@@ -548,7 +538,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][1],
+              num: 0,
               off: "25% off",
             },
             {
@@ -557,7 +547,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][2],
+              num: 0,
               off: "25% off",
             },
             {
@@ -566,7 +556,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][3],
+              num: 0,
               off: "25% off",
             },
             {
@@ -575,7 +565,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][4],
+              num: 0,
               off: "25% off",
             },
             {
@@ -584,7 +574,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][5],
+              num: 0,
               off: "25% off",
             },
             {
@@ -593,7 +583,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][6],
+              num: 0,
               off: "25% off",
             },
             {
@@ -602,7 +592,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][7],
+              num: 0,
               off: "25% off",
             },
             {
@@ -611,7 +601,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               rated: "0",
               delVal: "250.00",
               newVal: "$187.50",
-              num: numArr[3][8],
+              num: 0,
               off: "25% off",
             },
           ],
@@ -686,7 +676,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][0],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F22.YamahaR15Black.png&w=1920&q=75`,
@@ -695,7 +685,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][1],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F23.YamahaR15Blue.png&w=1920&q=75`,
@@ -704,7 +694,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][2],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F24.Revel2020.png&w=1920&q=75`,
@@ -713,7 +703,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][3],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FBikes%2F25.JacksonTB1.png&w=1920&q=75`,
@@ -722,7 +712,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][4],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F1.Siri2020.png&w=1920&q=75`,
@@ -731,7 +721,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][5],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F2.COSOR1.png&w=1920&q=75`,
@@ -740,7 +730,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][6],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F3.PanasonicCharge.png&w=1920&q=75`,
@@ -749,7 +739,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][7],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F3.PanasonicCharge.png&w=1920&q=75`,
@@ -758,7 +748,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][8],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F4.LumixDSLR.png&w=1920&q=75`,
@@ -767,7 +757,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][9],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F5.AtechCam1080p.png&w=1920&q=75`,
@@ -776,7 +766,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][10],
+              num: 0,
             },
             {
               ImgSrc: `https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FElectronics%2F6.Sonya9.png&w=1920&q=75`,
@@ -785,7 +775,7 @@ const Data = ({cartItem, setCartItem} : any ) => {
               delVal: "250.00",
               newVal: "$187.50",
               off: "25% off",
-              num: numArr[4][11],
+              num: 0,
             },
           ],
         },
@@ -813,49 +803,34 @@ const Data = ({cartItem, setCartItem} : any ) => {
             }
           ]
         },
-        {
-          DataArr: [
-            {
-              off: "20% off",
-              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F8.ColgateAdvanceProtectionToothpaste.png&w=1920&q=75",
-              name: "Colgate Advance Protec...",
-              delVal: "250$",
-              newVal: "200$",
-              rated: 0,
-            },
-            {
-              off: "20% off",
-              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F9.CatchSprinklersChatMasala.png&w=1920&q=75",
-              name: "Catch Sprinklers Chat M...",
-              delVal: "250$",
-              newVal: "200$",
-              rated: 0,
-            },
-            {
-              off: "20% off",
-              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F10.CatchItalianSeasoningGrinder.png&w=1920&q=75",
-              name: "Catch Italian Seasoning ...",
-              delVal: "250$",
-              newVal: "200$",
-              rated: 0,
-            },
-            {
-              off: "20% off",
-              ImgSrc: "https://bazar-react.vercel.app/_next/image?url=%2Fassets%2Fimages%2Fproducts%2FGroceries%2F11.TadkaGaramMasala.png&w=1920&q=75",
-              name: "Tadka Garam Masala",
-              delVal: "250$",
-              newVal: "200$",
-              rated: 0,
-            },
-          ]
-        }
-      ];
-      
-    return(
-        <div>
-            <BgGrayCarousal numArr={numArr} setNumArr={setNumArr} MainDataArr={MainDataArr} cartItem={cartItem} 
-            setCartItem={setCartItem} next={next} setNext={setNext}/>
-        </div>
-    )
+      ]
+  };
+export default function Reducer(state = initialState, action: any) {
+  switch (action.type) {
+    case SET_MAINDATAARR:
+      return {
+        ...state,
+        MainDataArr: action.payload
+      }
+    case SET_CARTITEM:
+      console.log("resetting cartItem");
+      return {
+        ...state,
+        cartItem: action.payload
+      }
+    case SET_OPEN:
+      return {
+        ...state,
+        open: action.payload
+      }
+    case SET_CHECK:
+      return {
+        ...state,
+        check: action.payload
+      }
+    default:
+      return{
+        ...state,
+      }
+    }
 }
-export default Data;

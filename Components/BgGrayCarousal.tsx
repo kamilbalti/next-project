@@ -1,122 +1,86 @@
+import Link from "next/link"
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import zero from "../public/0-5 rating star.png";
 import FourStar from "../public/4-5 rating star.png";
 import FiveStar from "../public/5-5 rating star.png";
-import Footer from "./footer";
-import AboutPage from "./AboutPage";
+import Footer from "./Footer";
 import BigCarousal from "./BigCarousal";
-// import redMenu from "../public/redMenu.png";
-// import medal from "../public/medal.png";
-// import brandStar from "../public/brandStar.png";
-// import newIcon from "../public/new.png";
-// import gift from "../public/gift.png";
-// import bazar from "../public/logo.svg"
+import { useDispatch, useSelector } from "react-redux";
+import { setCartItem, setMainDataArr, setOpen } from "../redux/Action";
+import Navbar from './Navbar'
 
 
-const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem, next, setNext } : any) => {
-  const [ open, setOpen ] = useState(false)
+const BgGrayCarousal = () => {
+  const { MainDataArr, cartItem, open } : any = useSelector((e) => e)
+  let dispatch = useDispatch()
+
+
   const [ select, setSelect ] : any = useState(false)
   const productSelect = (mainIndex: any, childIndex: any) => {
     setSelect({mainIndex: mainIndex, childIndex: childIndex})
-    // MainDataArr[mainIndex].DataArr[childIndex]
   }
-  const AddNum = (num: number, i: number, carNo: number) => {
-    setOpen(true)
-    // console.log(MainDataArr[carNo].DataArr[i].cartItemIndex, "ci")
-    let num2 = [...numArr];
-    num2[num][i] = num2[num][i] + 1;
-    setNumArr(num2)
-    let cartItem2: Array<any> = [];
-    cartItem2 = Array.isArray([...cartItem]) ? [...cartItem] : [];
+
+  const AddNum = ( i: number, carNo: number ) => {
     let MainDataArr2 : any = [...MainDataArr]
-    // alert(numArr[num][i])
-    if ( cartItem && numArr[num][i] === 1 ) {
+    MainDataArr2[carNo].DataArr[i].num = MainDataArr2[carNo].DataArr[i].num + 1
+    dispatch(setMainDataArr(MainDataArr2))
+    let cartItem2 : any = [...cartItem]
+    if (MainDataArr2[carNo].DataArr[i].num === 1 ) {
       MainDataArr2[carNo].DataArr[i].cartItemIndex = cartItem2.length
+      MainDataArr2[carNo].DataArr[i].index = i
+      MainDataArr2[carNo].DataArr[i].mainInd = carNo
       cartItem2.push(MainDataArr2[carNo].DataArr[i]);
-      // console.log( MainDataArr[carNo].DataArr[i].cartItemIndex, "cartIndex" )
-      setCartItem(cartItem2);
-      console.log(cartItem, "cart");
-      // console.log(MainDataArr2[carNo].DataArr[i].cartItemIndex + " length ")
-      MainDataArr = [...MainDataArr2]
-      // console.log(MainDataArr[carNo].DataArr[i].cartItemIndex + " cartItemIndex" + carNo + " cartNum " + i + " index ")
-      // alert(MainDataArr2[carNo].DataArr[i].cartItemIndex + " cartItemIndex " + carNo + " cartNum " + i + " index ")
     }
-    
-    // MainDataArr = MainDataArr2
-    
-    else if (cartItem && numArr[num][i] > 1) { 
-      // console.log( MainDataArr[carNo].DataArr[i].cartItemIndex, "cartIndex" )
+
+    else if (MainDataArr2[carNo].DataArr[i].num > 1) { 
       cartItem2 = [...cartItem]
-      // cartItem2[numArr[num][i]].num = numArr[num][i]
-      // let numArr2 = [...numArr]
-      // numArr2[num][i] = numArr2[num][i] + 1
       cartItem2[MainDataArr[carNo].DataArr[i].cartItemIndex] = MainDataArr[carNo].DataArr[i]
-      setCartItem(cartItem2);
-      MainDataArr = [...MainDataArr2]
-      // alert(MainDataArr2[carNo].DataArr[i].cartItemIndex + " cartItemIndex " + carNo + " cartNum " + i + " index ")
-    }
-    console.log(MainDataArr, "mainArr")
-    // useEffect(() => {
-    // },[ MainDataArr2[carNo].DataArr[i].cartItemIndex ])
-  };
-  useEffect(() => {
-    console.log(cartItem, "cart");
-  },[cartItem])
+    };
+    dispatch(setCartItem(cartItem2));
+    dispatch(setMainDataArr(MainDataArr2))
+  }
 
 
-  const CutNum = (num: number, i: number, carNo: number) => {
-    setOpen(true)
-    let cartItem2: any;
-    let num2 = [...numArr];
-    num2[num][i] = numArr[num][i] - 1;
-    setNumArr(num2);
-    if ( cartItem && num2[num][i] === 0) {
-      cartItem2 = [...cartItem];
-      cartItem2.filter((item: any, index: number) =>
-      index !== MainDataArr[carNo].DataArr[i].cartItemIndex &&
-      setCartItem(cartItem2)
+  const CutNum = (i: number, carNo: number) => {
+    let cartItem2: any = [...cartItem];
+    let MainDataArr2 : any = [...MainDataArr]
+    
+    MainDataArr2[carNo].DataArr[i].num = MainDataArr2[carNo].DataArr[i].num - 1;
+      if( MainDataArr2[carNo].DataArr[i].num >= 1 )
+      cartItem2[MainDataArr2[carNo].DataArr[i].cartItemIndex] = MainDataArr2[carNo].DataArr[i]
+      if( MainDataArr2[carNo].DataArr[i].num === 0 )
+      cartItem2 = cartItem2.filter((item: any, index: number) => 
+        item !== MainDataArr2[carNo].DataArr[i]
+        // item.num !== 0
       )
-    }
-      // cartItem2.push(MainDataArr[carNo].DataArr[i]);
-      // MainDataArr[carNo].cartItemIndex = cartItem2.length
-
-
-
-
-    // if (cartItem !== []) {
-      
-    // }
-    // cartItem2 !== []
-    //   ? cartItem2?.filter(
-    //       (item: any, index: number) => item !== MainDataArr[carNo].DataArr[i]
-    //     )
-    //   : false;
-    // setCartItem(cartItem2);
-    console.log(cartItem, "cart");
+      // }
+    dispatch(setMainDataArr(MainDataArr2))
+    dispatch(setCartItem(cartItem2))
   };
 
+  
+  
   const ChangeNextNum = (n: number, v: string, nv: number) => {
+    let MainDataArr2 = [...MainDataArr]
     if (v === "add") {
-      let next2 = [...next];
-      next2[nv] = MainDataArr[n].next + 1;
-      setNext(next2);
+      MainDataArr2[n].next = MainDataArr2[n]?.next + 1;
     }
     if (v === "sub") {
-      let next2 = [...next];
-      next2[nv] = MainDataArr[n].next - 1;
-      setNext(next2);
+      MainDataArr2[n].next = MainDataArr2[n]?.next - 1;
     }
+    dispatch(setMainDataArr(MainDataArr2))
   };
-
+  
   return (
     <div>
-      { !open && select?
-        <AboutPage mainInd={select?.mainIndex} childInd={select?.childIndex} MainDataArr={MainDataArr}/>
-        :
-        <div className={`bgLightGray`}>
+      <div className={`bgLightGray`}>
+        <div className="fullWidth">
+        <div>
+        {/* <Navbar /> */}
         <BigCarousal />
-        <div className={`SecondCarousalDiv `}>
+          <div className={`SecondCarousalDiv `}>
           <div className="centerRow headingDiv">
             <div
               style={{
@@ -148,7 +112,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                 index > MainDataArr[0].next - 2 && (
                   <div key={index} className={"imgDiv"}>
                     <p className="off">{item.off}</p>
-                    <img src={item.ImgSrc} className="imgSrc" onClick={() => productSelect(0, index)}/>
+                    <Link href={`/Product/${0}-${index}`}><img src={item.ImgSrc} className="imgSrc" onClick={() => productSelect(0, index)}/></Link>
                     <div className="centerRow">
                       <div className="aboutDiv">
                         <p className="itemName">{item.name}</p>
@@ -166,7 +130,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                       <div>
                         <p
                           className={item.num === 0 ? "add hidden" : "add"}
-                          onClick={() => CutNum(0, index, 0)}
+                          onClick={() => CutNum(index, 0)}
                         >
                           –
                         </p>
@@ -177,7 +141,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                         >
                           {item.num}
                         </p>
-                        <p className="add" onClick={() => AddNum(0, index, 0)}>
+                        <p className="add" onClick={() => AddNum(index, 0)}>
                           +
                         </p>
                       </div>
@@ -451,7 +415,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                     index > -1 && (
                       <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(5, index)}/>
+                        <Link href={`/Product/${5}-${index}`}><img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(5, index)}/></Link>
                         <div className="centerRow">
                           <div className="aboutDiv">
                             <p className="itemName">{item.name}</p>
@@ -466,7 +430,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                           <div>
                             <p
                               className={item.num === 0 ? "add hidden" : "add"}
-                              onClick={() => CutNum(1, index, 5)}
+                              onClick={() => CutNum(index, 5)}
                             >
                               –
                             </p>
@@ -479,7 +443,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                             </p>
                             <p
                               className="add"
-                              onClick={() => AddNum(1, index, 5)}
+                              onClick={() => AddNum(index, 5)}
                             >
                               +
                             </p>
@@ -520,7 +484,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                     index > -1 && (
                       <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(6, index)}/>
+                        <Link href={`/Product/${6}-${index}`}><img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(6, index)}/></Link>
                         <div className="centerRow">
                           <div className="aboutDiv">
                             <p className="itemName">{item.name}</p>
@@ -535,7 +499,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                           <div>
                             <p
                               className={item.num === 0 ? "add hidden" : "add"}
-                              onClick={() => CutNum(2, index, 6)}
+                              onClick={() => CutNum(index, 6)}
                             >
                               –
                             </p>
@@ -548,7 +512,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                             </p>
                             <p
                               className="add"
-                              onClick={() => AddNum(2, index, 6)}
+                              onClick={() => AddNum(index, 6)}
                             >
                               +
                             </p>
@@ -598,7 +562,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                     index > -1 && (
                       <div key={index} className={"imgDiv imgDiv4"}>
                         <p className="off">{item.off}</p>
-                        <img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(7, index)}/>
+                        <Link href={`/Product/${7}-${index}`}><img src={item.ImgSrc} className="imgSrc imgSrc4" onClick={() => productSelect(7, index)}/></Link>
                         <div className="centerRow">
                           <div className="aboutDiv">
                             <p className="itemName">{item.name}</p>
@@ -613,7 +577,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                           <div>
                             <p
                               className={item.num === 0 ? "add hidden" : "add"}
-                              onClick={() => CutNum(3, index, 7)}
+                              onClick={() => CutNum(index, 7)}
                             >
                               –
                             </p>
@@ -626,7 +590,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                             </p>
                             <p
                               className="add"
-                              onClick={() => AddNum(3, index, 7)}
+                              onClick={() => AddNum(index, 7)}
                             >
                               +
                             </p>
@@ -671,7 +635,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
               (item: any, index: number) =>
                   <div key={index} className={"imgDiv imgDiv5"}>
                     <p className="off">{item.off}</p>
-                    <img src={item.ImgSrc} className="imgSrc" onClick={() => productSelect(9, index)}/>
+                    <Link href={`/Product/${9}-${index}`}><img src={item.ImgSrc} className="imgSrc" onClick={() => productSelect(9, index)}/></Link>
                     <div className="centerRow">
                       <div className="aboutDiv">
                         <p className="itemName">{item.name}</p>
@@ -689,7 +653,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                       <div>
                         <p
                           className={item.num === 0 ? "add hidden" : "add"}
-                          onClick={() => CutNum(4, index, 9)}
+                          onClick={() => CutNum(index, 9)}
                         >
                           –
                         </p>
@@ -700,7 +664,7 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
                         >
                           {item.num}
                         </p>
-                        <p className="add" onClick={() => AddNum(4, index, 9)}>
+                        <p className="add" onClick={() => AddNum(index, 9)}>
                           +
                         </p>
                       </div>
@@ -721,9 +685,10 @@ const BgGrayCarousal = ({ numArr, setNumArr, MainDataArr, cartItem, setCartItem,
             )}
           </div>
         </div>
+      </div>
+      </div>
         <Footer />
       </div>
-      }
     </div>
   );
 };

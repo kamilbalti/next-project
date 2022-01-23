@@ -67,7 +67,7 @@ const BigCarousal = () => {
             </button>
           </div>
           <div className={`FirstCarousalItemChildDiv2`}>
-            <Image src={array2[num].imgSrc} width="600px" height="600px" />
+            <Image src={array2[num].imgSrc} className="FirstCarousalItemImg" />
           </div>
         </div>
         <div

@@ -50,6 +50,7 @@ const Footer = () => {
           <Image className="head" src={bazar} width="120px" height="50px"/>
           <p className="grayCol">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat et lectus vel ut sollicitudin elit at amet.</p>
           <div className="centerRow head">
+            <div className="centerRow">
             <div className="bgLightBlue">
               <img className="icon" src={`https://cdn.pixabay.com/photo/2016/08/31/00/49/google-1632434_1280.png`}/>
               <div>
@@ -64,6 +65,7 @@ const Footer = () => {
                 <p className="bold">App Store</p>
               </div>
             </div>
+            </div>
           </div>
         </div>
         {
@@ -73,11 +75,11 @@ const Footer = () => {
                 {item?.DataArr.map((item2: any, index2: number) => 
                     <p className={ index === 2 ? "grayCol" : "grayCol cursor"} >{item2}</p>
                 )}
-                <p className={"miniIconDiv"}>
+                <div className={"miniIconDiv"}>
                 {item?.imgArr?.map((item: any, index: number) => 
                     <img className="miniImage" src={item}/>
                     )}
-                </p>
+                </div>
             </div>
             )
         )}
